@@ -1,38 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: rgb(206, 202, 126);
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .login-section {
+            margin-top: 20px;
+        }
+        .login-section p {
+            display: inline-block;
+            margin: 0 10px 0 0;
+        }
+        button#login {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button#login:hover {
+            background-color: #007BB5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Signup</h1>
-    <hr><br>
-    <form action="/user" method="post">
-        <label>Enter your full name</label>
-        <input type="text" required name="name">
-        <label>Email</label>
-        <input type="text" required name="email">
-        <label>Password</label>
-        <input type="text" required name="password">
-        <button type="submit">Submit</button>
-    </form>
-    <br><hr>
-    <div><p>Existing User</p>
-        <button type="button" id="login">login</button>
+    <div class="container">
+        <h1>Signup</h1>
+        <hr>
+        <form action="/user" method="post">
+            <label for="name">Enter your full name</label>
+            <input type="text" id="name" required name="name">
+            <label for="email">Email</label>
+            <input type="text" id="email" required name="email">
+            <label for="password">Password</label>
+            <input type="text" id="password" required name="password">
+            <button type="submit">Submit</button>
+        </form>
+        <hr>
+        <div class="login-section">
+            <p>Existing User?</p>
+            <button type="button" id="login">Login</button>
         </div>
-        <script>
-            // Add an event listener to the signup button
-            document.getElementById("login").addEventListener("click", function() {
-                // Redirect the user to the signup page
-                window.location.href = "/login";
-            });
-        </script>
+    </div>
+    <script>
+        // Add an event listener to the login button
+        document.getElementById("login").addEventListener("click", function() {
+            // Redirect the user to the login page
+            window.location.href = "/login";
+        });
+    </script>
 </body>
 </html>
