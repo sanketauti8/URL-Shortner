@@ -107,7 +107,7 @@
         <button class="logout" id="logout">Logout</button>
         <h1>URL Shortener</h1>
         <% if (locals.id) { %>
-            <p class="generated-url">URL Generated: <a href="https://url-shortener-hvr1.onrender.com/<%= id %>">http://localhost:9000/<%= id %></a></p>
+            <p class="generated-url">URL Generated: <a href="https://url-shortener-hvr1.onrender.com/<%= id %>">http://url/<%= id %></a></p>
         <% } %>
         <div>
             <form method="post" action="/url">
